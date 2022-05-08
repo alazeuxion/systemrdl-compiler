@@ -746,7 +746,7 @@ class SystemRDLParser ( Parser ):
             self.state = 173
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.ALIAS_kw) | (1 << SystemRDLParser.EXTERNAL_kw) | (1 << SystemRDLParser.INTERNAL_kw) | (1 << SystemRDLParser.ADDRMAP_kw) | (1 << SystemRDLParser.REGFILE_kw) | (1 << SystemRDLParser.REG_kw) | (1 << SystemRDLParser.FIELD_kw) | (1 << SystemRDLParser.MEM_kw) | (1 << SystemRDLParser.SIGNAL_kw) | (1 << SystemRDLParser.RCLR_kw) | (1 << SystemRDLParser.RSET_kw) | (1 << SystemRDLParser.WOSET_kw) | (1 << SystemRDLParser.WOCLR_kw) | (1 << SystemRDLParser.HW_kw) | (1 << SystemRDLParser.SW_kw) | (1 << SystemRDLParser.POSEDGE_kw) | (1 << SystemRDLParser.NEGEDGE_kw))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (SystemRDLParser.BOTHEDGE_kw - 64)) | (1 << (SystemRDLParser.LEVEL_kw - 64)) | (1 << (SystemRDLParser.NONSTICKY_kw - 64)) | (1 << (SystemRDLParser.ABSTRACT_kw - 64)) | (1 << (SystemRDLParser.CONSTRAINT_kw - 64)) | (1 << (SystemRDLParser.DEFAULT_kw - 64)) | (1 << (SystemRDLParser.ENUM_kw - 64)) | (1 << (SystemRDLParser.ENCODE_kw - 64)) | (1 << (SystemRDLParser.PROPERTY_kw - 64)) | (1 << (SystemRDLParser.STRUCT_kw - 64)) | (1 << (SystemRDLParser.ID - 64)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 0xf003600ff8000000) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 0x200000000000a78f) != 0):
                 self.state = 168
                 self.root_elem()
                 self.state = 169
@@ -934,13 +934,13 @@ class SystemRDLParser ( Parser ):
                 self.state = 195
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [SystemRDLParser.EXTERNAL_kw, SystemRDLParser.INTERNAL_kw]:
+                if (1 << token) & 0x30000000 != 0:
                     self.state = 189
                     self.component_inst_type()
                     self.state = 190
                     self.component_insts()
                     pass
-                elif token in [SystemRDLParser.T__0, SystemRDLParser.T__4, SystemRDLParser.ID]:
+                elif (1 << token) & 0x20000000000000000000000000000022 != 0:
                     self.state = 193
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
@@ -962,13 +962,13 @@ class SystemRDLParser ( Parser ):
                 self.state = 202
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [SystemRDLParser.EXTERNAL_kw, SystemRDLParser.INTERNAL_kw]:
+                if (1 << token) & 0x30000000 != 0:
                     self.state = 198
                     self.component_inst_type()
                     self.state = 199
                     self.component_insts()
                     pass
-                elif token in [SystemRDLParser.T__4, SystemRDLParser.ID]:
+                elif (1 << token) & 0x20000000000000000000000000000020 != 0:
                     self.state = 201
                     self.component_insts()
                     pass
@@ -1269,7 +1269,7 @@ class SystemRDLParser ( Parser ):
             self.state = 242
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.ALIAS_kw) | (1 << SystemRDLParser.EXTERNAL_kw) | (1 << SystemRDLParser.INTERNAL_kw) | (1 << SystemRDLParser.ADDRMAP_kw) | (1 << SystemRDLParser.REGFILE_kw) | (1 << SystemRDLParser.REG_kw) | (1 << SystemRDLParser.FIELD_kw) | (1 << SystemRDLParser.MEM_kw) | (1 << SystemRDLParser.SIGNAL_kw) | (1 << SystemRDLParser.RCLR_kw) | (1 << SystemRDLParser.RSET_kw) | (1 << SystemRDLParser.WOSET_kw) | (1 << SystemRDLParser.WOCLR_kw) | (1 << SystemRDLParser.HW_kw) | (1 << SystemRDLParser.SW_kw) | (1 << SystemRDLParser.POSEDGE_kw) | (1 << SystemRDLParser.NEGEDGE_kw))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (SystemRDLParser.BOTHEDGE_kw - 64)) | (1 << (SystemRDLParser.LEVEL_kw - 64)) | (1 << (SystemRDLParser.NONSTICKY_kw - 64)) | (1 << (SystemRDLParser.ABSTRACT_kw - 64)) | (1 << (SystemRDLParser.CONSTRAINT_kw - 64)) | (1 << (SystemRDLParser.DEFAULT_kw - 64)) | (1 << (SystemRDLParser.ENUM_kw - 64)) | (1 << (SystemRDLParser.ENCODE_kw - 64)) | (1 << (SystemRDLParser.STRUCT_kw - 64)) | (1 << (SystemRDLParser.ID - 64)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 0xf003600ff8000000) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 0x200000000000878f) != 0):
                 self.state = 237
                 self.component_body_elem()
                 self.state = 238
@@ -1854,12 +1854,12 @@ class SystemRDLParser ( Parser ):
             self.state = 304
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.ADDRMAP_kw, SystemRDLParser.REGFILE_kw, SystemRDLParser.REG_kw, SystemRDLParser.FIELD_kw, SystemRDLParser.MEM_kw]:
+            if (1 << token) & 0x7c0000000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 302
                 self.component_type_primary()
                 pass
-            elif token in [SystemRDLParser.SIGNAL_kw]:
+            elif token == 35:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 303
                 localctx.kw = self.match(SystemRDLParser.SIGNAL_kw)
@@ -1921,7 +1921,7 @@ class SystemRDLParser ( Parser ):
             self.state = 306
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.ADDRMAP_kw) | (1 << SystemRDLParser.REGFILE_kw) | (1 << SystemRDLParser.REG_kw) | (1 << SystemRDLParser.FIELD_kw) | (1 << SystemRDLParser.MEM_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x7c0000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2352,7 +2352,7 @@ class SystemRDLParser ( Parser ):
             self.state = 351
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.PLUS, SystemRDLParser.MINUS, SystemRDLParser.BNOT, SystemRDLParser.NOT, SystemRDLParser.NAND, SystemRDLParser.AND, SystemRDLParser.OR, SystemRDLParser.NOR, SystemRDLParser.XOR, SystemRDLParser.XNOR]:
+            if (1 << token) & 0xeef000000000000000000000000 != 0:
                 localctx = SystemRDLParser.UnaryExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -2360,7 +2360,7 @@ class SystemRDLParser ( Parser ):
                 self.state = 348
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(((((_la - 96)) & ~0x3f) == 0 and ((1 << (_la - 96)) & ((1 << (SystemRDLParser.PLUS - 96)) | (1 << (SystemRDLParser.MINUS - 96)) | (1 << (SystemRDLParser.BNOT - 96)) | (1 << (SystemRDLParser.NOT - 96)) | (1 << (SystemRDLParser.NAND - 96)) | (1 << (SystemRDLParser.AND - 96)) | (1 << (SystemRDLParser.OR - 96)) | (1 << (SystemRDLParser.NOR - 96)) | (1 << (SystemRDLParser.XOR - 96)) | (1 << (SystemRDLParser.XNOR - 96)))) != 0)):
+                if not(((((_la - 96)) & ~0x3f) == 0 and ((1 << (_la - 96)) & 0xeef) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -2368,7 +2368,7 @@ class SystemRDLParser ( Parser ):
                 self.state = 349
                 self.expr_primary()
                 pass
-            elif token in [SystemRDLParser.T__1, SystemRDLParser.T__5, SystemRDLParser.T__10, SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw, SystemRDLParser.TRUE_kw, SystemRDLParser.FALSE_kw, SystemRDLParser.NA_kw, SystemRDLParser.RW_kw, SystemRDLParser.WR_kw, SystemRDLParser.R_kw, SystemRDLParser.W_kw, SystemRDLParser.RW1_kw, SystemRDLParser.W1_kw, SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.RUSER_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.WOT_kw, SystemRDLParser.WZS_kw, SystemRDLParser.WZC_kw, SystemRDLParser.WZT_kw, SystemRDLParser.WCLR_kw, SystemRDLParser.WSET_kw, SystemRDLParser.WUSER_kw, SystemRDLParser.COMPACT_kw, SystemRDLParser.REGALIGN_kw, SystemRDLParser.FULLALIGN_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw, SystemRDLParser.INT, SystemRDLParser.HEX_INT, SystemRDLParser.VLOG_INT, SystemRDLParser.STRING, SystemRDLParser.ID]:
+            elif (1 << token) & 0x20000000f00000003ffffff0001c0844 != 0:
                 localctx = SystemRDLParser.NOPContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -2413,7 +2413,7 @@ class SystemRDLParser ( Parser ):
                         self.state = 357
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(((((_la - 110)) & ~0x3f) == 0 and ((1 << (_la - 110)) & ((1 << (SystemRDLParser.MULT - 110)) | (1 << (SystemRDLParser.DIV - 110)) | (1 << (SystemRDLParser.MOD - 110)))) != 0)):
+                        if not(((((_la - 110)) & ~0x3f) == 0 and ((1 << (_la - 110)) & 0xd) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -2470,7 +2470,7 @@ class SystemRDLParser ( Parser ):
                         self.state = 366
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(((((_la - 117)) & ~0x3f) == 0 and ((1 << (_la - 117)) & ((1 << (SystemRDLParser.LEQ - 117)) | (1 << (SystemRDLParser.LT - 117)) | (1 << (SystemRDLParser.GEQ - 117)) | (1 << (SystemRDLParser.GT - 117)))) != 0)):
+                        if not(((((_la - 117)) & ~0x3f) == 0 and ((1 << (_la - 117)) & 0xf) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -2954,13 +2954,13 @@ class SystemRDLParser ( Parser ):
             self.state = 440
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw]:
+            if (1 << token) & 0x1c0000 != 0:
                 localctx = SystemRDLParser.CastTypeContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 428
                 localctx.typ = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.BOOLEAN_kw) | (1 << SystemRDLParser.BIT_kw) | (1 << SystemRDLParser.LONGINT_kw))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x1c0000) != 0)):
                     localctx.typ = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -2974,7 +2974,7 @@ class SystemRDLParser ( Parser ):
                 self.state = 432
                 self.match(SystemRDLParser.T__6)
                 pass
-            elif token in [SystemRDLParser.T__5, SystemRDLParser.TRUE_kw, SystemRDLParser.FALSE_kw, SystemRDLParser.NA_kw, SystemRDLParser.RW_kw, SystemRDLParser.WR_kw, SystemRDLParser.R_kw, SystemRDLParser.W_kw, SystemRDLParser.RW1_kw, SystemRDLParser.W1_kw, SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.RUSER_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.WOT_kw, SystemRDLParser.WZS_kw, SystemRDLParser.WZC_kw, SystemRDLParser.WZT_kw, SystemRDLParser.WCLR_kw, SystemRDLParser.WSET_kw, SystemRDLParser.WUSER_kw, SystemRDLParser.COMPACT_kw, SystemRDLParser.REGALIGN_kw, SystemRDLParser.FULLALIGN_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw, SystemRDLParser.INT, SystemRDLParser.HEX_INT, SystemRDLParser.VLOG_INT, SystemRDLParser.STRING, SystemRDLParser.ID]:
+            elif (1 << token) & 0x20000000f00000003ffffff000000040 != 0:
                 localctx = SystemRDLParser.CastWidthContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 434
@@ -3035,12 +3035,12 @@ class SystemRDLParser ( Parser ):
             self.state = 444
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.TRUE_kw, SystemRDLParser.FALSE_kw, SystemRDLParser.NA_kw, SystemRDLParser.RW_kw, SystemRDLParser.WR_kw, SystemRDLParser.R_kw, SystemRDLParser.W_kw, SystemRDLParser.RW1_kw, SystemRDLParser.W1_kw, SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.RUSER_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.WOT_kw, SystemRDLParser.WZS_kw, SystemRDLParser.WZC_kw, SystemRDLParser.WZT_kw, SystemRDLParser.WCLR_kw, SystemRDLParser.WSET_kw, SystemRDLParser.WUSER_kw, SystemRDLParser.COMPACT_kw, SystemRDLParser.REGALIGN_kw, SystemRDLParser.FULLALIGN_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw, SystemRDLParser.INT, SystemRDLParser.HEX_INT, SystemRDLParser.VLOG_INT, SystemRDLParser.STRING, SystemRDLParser.ID]:
+            if (1 << token) & 0x20000000f00000003ffffff000000000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 442
                 self.literal()
                 pass
-            elif token in [SystemRDLParser.T__5]:
+            elif token == 6:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 443
                 self.paren_expr()
@@ -3236,17 +3236,17 @@ class SystemRDLParser ( Parser ):
             self.state = 461
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw, SystemRDLParser.STRING_kw, SystemRDLParser.ID]:
+            if (1 << token) & 0x200000000000000000000000005c0000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 459
                 self.basic_data_type()
                 pass
-            elif token in [SystemRDLParser.ACCESSTYPE_kw, SystemRDLParser.ADDRESSINGTYPE_kw, SystemRDLParser.ONREADTYPE_kw, SystemRDLParser.ONWRITETYPE_kw]:
+            elif (1 << token) & 0x7800000 != 0:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 460
                 localctx.kw = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.ACCESSTYPE_kw) | (1 << SystemRDLParser.ADDRESSINGTYPE_kw) | (1 << SystemRDLParser.ONREADTYPE_kw) | (1 << SystemRDLParser.ONWRITETYPE_kw))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x7800000) != 0)):
                     localctx.kw = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -3311,7 +3311,7 @@ class SystemRDLParser ( Parser ):
             self.state = 468
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw]:
+            if (1 << token) & 0x180000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 463
                 localctx.kw = self._input.LT(1)
@@ -3330,7 +3330,7 @@ class SystemRDLParser ( Parser ):
 
 
                 pass
-            elif token in [SystemRDLParser.BOOLEAN_kw, SystemRDLParser.STRING_kw, SystemRDLParser.ID]:
+            elif (1 << token) & 0x20000000000000000000000000440000 != 0:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 467
                 localctx.kw = self._input.LT(1)
@@ -3416,47 +3416,47 @@ class SystemRDLParser ( Parser ):
             self.state = 479
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.INT, SystemRDLParser.HEX_INT, SystemRDLParser.VLOG_INT]:
+            if (1 << token) & 0x700000000000000000000000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 470
                 self.number()
                 pass
-            elif token in [SystemRDLParser.STRING]:
+            elif token == 95:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 471
                 self.string_literal()
                 pass
-            elif token in [SystemRDLParser.TRUE_kw, SystemRDLParser.FALSE_kw]:
+            elif (1 << token) & 0x3000000000 != 0:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 472
                 self.boolean_literal()
                 pass
-            elif token in [SystemRDLParser.NA_kw, SystemRDLParser.RW_kw, SystemRDLParser.WR_kw, SystemRDLParser.R_kw, SystemRDLParser.W_kw, SystemRDLParser.RW1_kw, SystemRDLParser.W1_kw]:
+            elif (1 << token) & 0x1fc000000000 != 0:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 473
                 self.accesstype_literal()
                 pass
-            elif token in [SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.RUSER_kw]:
+            elif (1 << token) & 0xe00000000000 != 0:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 474
                 self.onreadtype_literal()
                 pass
-            elif token in [SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.WOT_kw, SystemRDLParser.WZS_kw, SystemRDLParser.WZC_kw, SystemRDLParser.WZT_kw, SystemRDLParser.WCLR_kw, SystemRDLParser.WSET_kw, SystemRDLParser.WUSER_kw]:
+            elif (1 << token) & 0x1ff000000000000 != 0:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 475
                 self.onwritetype_literal()
                 pass
-            elif token in [SystemRDLParser.COMPACT_kw, SystemRDLParser.REGALIGN_kw, SystemRDLParser.FULLALIGN_kw]:
+            elif (1 << token) & 0xe00000000000000 != 0:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 476
                 self.addressingtype_literal()
                 pass
-            elif token in [SystemRDLParser.HW_kw, SystemRDLParser.SW_kw]:
+            elif (1 << token) & 0x3000000000000000 != 0:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 477
                 self.precedencetype_literal()
                 pass
-            elif token in [SystemRDLParser.ID]:
+            elif token == 125:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 478
                 self.enum_literal()
@@ -3547,19 +3547,19 @@ class SystemRDLParser ( Parser ):
             self.state = 484
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.INT]:
+            if token == 92:
                 localctx = SystemRDLParser.NumberIntContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 481
                 self.match(SystemRDLParser.INT)
                 pass
-            elif token in [SystemRDLParser.HEX_INT]:
+            elif token == 93:
                 localctx = SystemRDLParser.NumberHexContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 482
                 self.match(SystemRDLParser.HEX_INT)
                 pass
-            elif token in [SystemRDLParser.VLOG_INT]:
+            elif token == 94:
                 localctx = SystemRDLParser.NumberVerilogContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 483
@@ -3956,7 +3956,7 @@ class SystemRDLParser ( Parser ):
             self.state = 528
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.NA_kw) | (1 << SystemRDLParser.RW_kw) | (1 << SystemRDLParser.WR_kw) | (1 << SystemRDLParser.R_kw) | (1 << SystemRDLParser.W_kw) | (1 << SystemRDLParser.RW1_kw) | (1 << SystemRDLParser.W1_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x1fc000000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4009,7 +4009,7 @@ class SystemRDLParser ( Parser ):
             self.state = 530
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.RCLR_kw) | (1 << SystemRDLParser.RSET_kw) | (1 << SystemRDLParser.RUSER_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0xe00000000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4080,7 +4080,7 @@ class SystemRDLParser ( Parser ):
             self.state = 532
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.WOSET_kw) | (1 << SystemRDLParser.WOCLR_kw) | (1 << SystemRDLParser.WOT_kw) | (1 << SystemRDLParser.WZS_kw) | (1 << SystemRDLParser.WZC_kw) | (1 << SystemRDLParser.WZT_kw) | (1 << SystemRDLParser.WCLR_kw) | (1 << SystemRDLParser.WSET_kw) | (1 << SystemRDLParser.WUSER_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x1ff000000000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4133,7 +4133,7 @@ class SystemRDLParser ( Parser ):
             self.state = 534
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.COMPACT_kw) | (1 << SystemRDLParser.REGALIGN_kw) | (1 << SystemRDLParser.FULLALIGN_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0xe00000000000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4353,11 +4353,11 @@ class SystemRDLParser ( Parser ):
             self.state = 557
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw]:
+            if (1 << token) & 0x3003600000000000 != 0:
                 self.state = 555
                 self.prop_keyword()
                 pass
-            elif token in [SystemRDLParser.ID]:
+            elif token == 125:
                 self.state = 556
                 self.match(SystemRDLParser.ID)
                 pass
@@ -4580,11 +4580,11 @@ class SystemRDLParser ( Parser ):
             self.state = 585
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw]:
+            if (1 << token) & 0x3003600000000000 != 0:
                 self.state = 583
                 self.prop_keyword()
                 pass
-            elif token in [SystemRDLParser.ID]:
+            elif token == 125:
                 self.state = 584
                 self.match(SystemRDLParser.ID)
                 pass
@@ -4809,7 +4809,7 @@ class SystemRDLParser ( Parser ):
             self.state = 602
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.RCLR_kw) | (1 << SystemRDLParser.RSET_kw) | (1 << SystemRDLParser.WOSET_kw) | (1 << SystemRDLParser.WOCLR_kw) | (1 << SystemRDLParser.HW_kw) | (1 << SystemRDLParser.SW_kw))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 0x3003600000000000) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4868,7 +4868,7 @@ class SystemRDLParser ( Parser ):
             self.state = 604
             localctx.kw = self._input.LT(1)
             _la = self._input.LA(1)
-            if not(((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (SystemRDLParser.POSEDGE_kw - 62)) | (1 << (SystemRDLParser.NEGEDGE_kw - 62)) | (1 << (SystemRDLParser.BOTHEDGE_kw - 62)) | (1 << (SystemRDLParser.LEVEL_kw - 62)) | (1 << (SystemRDLParser.NONSTICKY_kw - 62)))) != 0)):
+            if not(((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & 0x1f) != 0)):
                 localctx.kw = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4938,7 +4938,7 @@ class SystemRDLParser ( Parser ):
                 self.state = 614 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & ((1 << (SystemRDLParser.COMPONENT_kw - 69)) | (1 << (SystemRDLParser.CONSTRAINT_kw - 69)) | (1 << (SystemRDLParser.DEFAULT_kw - 69)) | (1 << (SystemRDLParser.TYPE_kw - 69)))) != 0)):
+                if not (((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & 0x100d) != 0)):
                     break
 
             self.state = 616
@@ -4995,22 +4995,22 @@ class SystemRDLParser ( Parser ):
             self.state = 622
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.TYPE_kw]:
+            if token == 81:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 618
                 self.udp_type()
                 pass
-            elif token in [SystemRDLParser.COMPONENT_kw]:
+            elif token == 69:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 619
                 self.udp_usage()
                 pass
-            elif token in [SystemRDLParser.DEFAULT_kw]:
+            elif token == 72:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 620
                 self.udp_default()
                 pass
-            elif token in [SystemRDLParser.CONSTRAINT_kw]:
+            elif token == 71:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 621
                 self.udp_constraint()
@@ -5133,12 +5133,12 @@ class SystemRDLParser ( Parser ):
             self.state = 633
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.ADDRMAP_kw, SystemRDLParser.REGFILE_kw, SystemRDLParser.REG_kw, SystemRDLParser.FIELD_kw, SystemRDLParser.MEM_kw]:
+            if (1 << token) & 0x7c0000000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 630
                 self.component_type_primary()
                 pass
-            elif token in [SystemRDLParser.NUMBER_kw, SystemRDLParser.REF_kw]:
+            elif (1 << token) & 0x50000000000000000000 != 0:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 631
                 localctx.kw = self._input.LT(1)
@@ -5149,7 +5149,7 @@ class SystemRDLParser ( Parser ):
                     self._errHandler.reportMatch(self)
                     self.consume()
                 pass
-            elif token in [SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw, SystemRDLParser.STRING_kw, SystemRDLParser.ID]:
+            elif (1 << token) & 0x200000000000000000000000005c0000 != 0:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 632
                 self.basic_data_type()
@@ -5277,12 +5277,12 @@ class SystemRDLParser ( Parser ):
             self.state = 647
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.ADDRMAP_kw, SystemRDLParser.REGFILE_kw, SystemRDLParser.REG_kw, SystemRDLParser.FIELD_kw, SystemRDLParser.MEM_kw, SystemRDLParser.SIGNAL_kw]:
+            if (1 << token) & 0xfc0000000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 645
                 self.component_type()
                 pass
-            elif token in [SystemRDLParser.ALL_kw, SystemRDLParser.CONSTRAINT_kw]:
+            elif (1 << token) & 0x900000000000000000 != 0:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 646
                 localctx.kw = self._input.LT(1)
@@ -5684,7 +5684,7 @@ class SystemRDLParser ( Parser ):
             self.state = 705
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.BOOLEAN_kw) | (1 << SystemRDLParser.BIT_kw) | (1 << SystemRDLParser.LONGINT_kw) | (1 << SystemRDLParser.STRING_kw) | (1 << SystemRDLParser.ACCESSTYPE_kw) | (1 << SystemRDLParser.ADDRESSINGTYPE_kw) | (1 << SystemRDLParser.ONREADTYPE_kw) | (1 << SystemRDLParser.ONWRITETYPE_kw) | (1 << SystemRDLParser.ADDRMAP_kw) | (1 << SystemRDLParser.REGFILE_kw) | (1 << SystemRDLParser.REG_kw) | (1 << SystemRDLParser.FIELD_kw) | (1 << SystemRDLParser.MEM_kw) | (1 << SystemRDLParser.SIGNAL_kw))) != 0) or _la==SystemRDLParser.ID:
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 0xfc7dc0000) != 0) or _la==SystemRDLParser.ID:
                 self.state = 700
                 self.struct_elem()
                 self.state = 701
@@ -5797,12 +5797,12 @@ class SystemRDLParser ( Parser ):
             self.state = 717
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw, SystemRDLParser.STRING_kw, SystemRDLParser.ACCESSTYPE_kw, SystemRDLParser.ADDRESSINGTYPE_kw, SystemRDLParser.ONREADTYPE_kw, SystemRDLParser.ONWRITETYPE_kw, SystemRDLParser.ID]:
+            if (1 << token) & 0x20000000000000000000000007dc0000 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 715
                 self.data_type()
                 pass
-            elif token in [SystemRDLParser.ADDRMAP_kw, SystemRDLParser.REGFILE_kw, SystemRDLParser.REG_kw, SystemRDLParser.FIELD_kw, SystemRDLParser.MEM_kw, SystemRDLParser.SIGNAL_kw]:
+            elif (1 << token) & 0xfc0000000 != 0:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 716
                 self.component_type()
@@ -6024,7 +6024,7 @@ class SystemRDLParser ( Parser ):
             self.state = 741
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << SystemRDLParser.T__1) | (1 << SystemRDLParser.T__5) | (1 << SystemRDLParser.T__10) | (1 << SystemRDLParser.BOOLEAN_kw) | (1 << SystemRDLParser.BIT_kw) | (1 << SystemRDLParser.LONGINT_kw) | (1 << SystemRDLParser.TRUE_kw) | (1 << SystemRDLParser.FALSE_kw) | (1 << SystemRDLParser.NA_kw) | (1 << SystemRDLParser.RW_kw) | (1 << SystemRDLParser.WR_kw) | (1 << SystemRDLParser.R_kw) | (1 << SystemRDLParser.W_kw) | (1 << SystemRDLParser.RW1_kw) | (1 << SystemRDLParser.W1_kw) | (1 << SystemRDLParser.RCLR_kw) | (1 << SystemRDLParser.RSET_kw) | (1 << SystemRDLParser.RUSER_kw) | (1 << SystemRDLParser.WOSET_kw) | (1 << SystemRDLParser.WOCLR_kw) | (1 << SystemRDLParser.WOT_kw) | (1 << SystemRDLParser.WZS_kw) | (1 << SystemRDLParser.WZC_kw) | (1 << SystemRDLParser.WZT_kw) | (1 << SystemRDLParser.WCLR_kw) | (1 << SystemRDLParser.WSET_kw) | (1 << SystemRDLParser.WUSER_kw) | (1 << SystemRDLParser.COMPACT_kw) | (1 << SystemRDLParser.REGALIGN_kw) | (1 << SystemRDLParser.FULLALIGN_kw) | (1 << SystemRDLParser.HW_kw) | (1 << SystemRDLParser.SW_kw))) != 0) or ((((_la - 80)) & ~0x3f) == 0 and ((1 << (_la - 80)) & ((1 << (SystemRDLParser.THIS_kw - 80)) | (1 << (SystemRDLParser.INT - 80)) | (1 << (SystemRDLParser.HEX_INT - 80)) | (1 << (SystemRDLParser.VLOG_INT - 80)) | (1 << (SystemRDLParser.STRING - 80)) | (1 << (SystemRDLParser.PLUS - 80)) | (1 << (SystemRDLParser.MINUS - 80)) | (1 << (SystemRDLParser.BNOT - 80)) | (1 << (SystemRDLParser.NOT - 80)) | (1 << (SystemRDLParser.NAND - 80)) | (1 << (SystemRDLParser.AND - 80)) | (1 << (SystemRDLParser.OR - 80)) | (1 << (SystemRDLParser.NOR - 80)) | (1 << (SystemRDLParser.XOR - 80)) | (1 << (SystemRDLParser.XNOR - 80)) | (1 << (SystemRDLParser.ID - 80)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 0x3ffffff0001c0844) != 0) or ((((_la - 80)) & ~0x3f) == 0 and ((1 << (_la - 80)) & 0x20000eeff001) != 0):
                 self.state = 736
                 self.constraint_body_elem()
                 self.state = 737
@@ -6233,7 +6233,7 @@ class SystemRDLParser ( Parser ):
             self.state = 761
             localctx.op = self._input.LT(1)
             _la = self._input.LA(1)
-            if not(((((_la - 114)) & ~0x3f) == 0 and ((1 << (_la - 114)) & ((1 << (SystemRDLParser.EQ - 114)) | (1 << (SystemRDLParser.NEQ - 114)) | (1 << (SystemRDLParser.LEQ - 114)) | (1 << (SystemRDLParser.LT - 114)) | (1 << (SystemRDLParser.GEQ - 114)) | (1 << (SystemRDLParser.GT - 114)))) != 0)):
+            if not(((((_la - 114)) & ~0x3f) == 0 and ((1 << (_la - 114)) & 0x7d) != 0)):
                 localctx.op = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -6454,12 +6454,12 @@ class SystemRDLParser ( Parser ):
             self.state = 787
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.THIS_kw]:
+            if token == 80:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 785
                 self.match(SystemRDLParser.THIS_kw)
                 pass
-            elif token in [SystemRDLParser.ID]:
+            elif token == 125:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 786
                 self.instance_ref()
@@ -6513,12 +6513,12 @@ class SystemRDLParser ( Parser ):
             self.state = 796
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [SystemRDLParser.T__1, SystemRDLParser.T__5, SystemRDLParser.T__10, SystemRDLParser.BOOLEAN_kw, SystemRDLParser.BIT_kw, SystemRDLParser.LONGINT_kw, SystemRDLParser.TRUE_kw, SystemRDLParser.FALSE_kw, SystemRDLParser.NA_kw, SystemRDLParser.RW_kw, SystemRDLParser.WR_kw, SystemRDLParser.R_kw, SystemRDLParser.W_kw, SystemRDLParser.RW1_kw, SystemRDLParser.W1_kw, SystemRDLParser.RCLR_kw, SystemRDLParser.RSET_kw, SystemRDLParser.RUSER_kw, SystemRDLParser.WOSET_kw, SystemRDLParser.WOCLR_kw, SystemRDLParser.WOT_kw, SystemRDLParser.WZS_kw, SystemRDLParser.WZC_kw, SystemRDLParser.WZT_kw, SystemRDLParser.WCLR_kw, SystemRDLParser.WSET_kw, SystemRDLParser.WUSER_kw, SystemRDLParser.COMPACT_kw, SystemRDLParser.REGALIGN_kw, SystemRDLParser.FULLALIGN_kw, SystemRDLParser.HW_kw, SystemRDLParser.SW_kw, SystemRDLParser.INT, SystemRDLParser.HEX_INT, SystemRDLParser.VLOG_INT, SystemRDLParser.STRING, SystemRDLParser.PLUS, SystemRDLParser.MINUS, SystemRDLParser.BNOT, SystemRDLParser.NOT, SystemRDLParser.NAND, SystemRDLParser.AND, SystemRDLParser.OR, SystemRDLParser.NOR, SystemRDLParser.XOR, SystemRDLParser.XNOR, SystemRDLParser.ID]:
+            if (1 << token) & 0x20000eeff00000003ffffff0001c0844 != 0:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 789
                 localctx.val = self.expr(0)
                 pass
-            elif token in [SystemRDLParser.T__11]:
+            elif token == 12:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 790
                 self.match(SystemRDLParser.T__11)
