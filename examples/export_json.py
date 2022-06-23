@@ -15,23 +15,44 @@ def convert_field(rdlc: RDLCompiler, obj: node.FieldNode) -> dict:
     json_obj['msb'] = obj.msb
     json_obj['reset'] = obj.get_property('reset')
     json_obj['sw_access'] = obj.get_property('sw').name
+    json_obj['desc'] = obj.get_property('desc') # description
     return json_obj
 
 
 def convert_reg(rdlc: RDLCompiler, obj: node.RegNode) -> dict:
-    if obj.is_array:
+    #if obj.is_array:
         # Use the RDL Compiler message system to print an error
         # fatal() raises RDLCompileError
-        rdlc.msg.fatal(
-            "JSON export does not support arrays",
-            obj.inst.inst_src_ref
-        )
+    #    rdlc.msg.fatal(
+    #        "JSON export does not support arrays",
+    #        obj.inst.inst_src_ref
+    #    )
 
     # Convert information about the register
     json_obj = dict()
     json_obj['type'] = 'reg'
     json_obj['inst_name'] = obj.inst_name
+
+    # set obj.current_idx to avoid ValueError: Index of array element must be known to derive address
+    if obj.is_array:
+        obj.current_idx = [0]
+
     json_obj['addr_offset'] = obj.address_offset
+    
+    if obj.get_property('desc') != None:
+        json_obj['desc'] = obj.get_property('desc') # description
+
+    if obj.get_property('indexdesc') != None:
+        json_obj['index'] = obj.get_property('indexdesc')
+
+    if obj.is_array:
+        node_iter = obj.unrolled()
+        entries = 0
+        for node in node_iter:
+            entries += 1
+
+        json_obj['entries'] = entries
+        json_obj['entry_size'] = obj.get_property('regwidth')
 
     # Iterate over all the fields in this reg and convert them
     json_obj['children'] = []
@@ -59,6 +80,10 @@ def convert_addrmap_or_regfile(rdlc: RDLCompiler, obj: Union[node.AddrmapNode, n
 
     json_obj['inst_name'] = obj.inst_name
     json_obj['addr_offset'] = obj.address_offset
+
+
+    if obj.get_property('desc') != None:
+        json_obj['desc'] = obj.get_property('desc') # description
 
     json_obj['children'] = []
     for child in obj.children():
