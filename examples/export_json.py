@@ -20,6 +20,7 @@ def convert_field(rdlc: RDLCompiler, obj: node.FieldNode) -> dict:
 
 
 def convert_reg(rdlc: RDLCompiler, obj: node.RegNode) -> dict:
+    # suppress warning for arrays
     #if obj.is_array:
         # Use the RDL Compiler message system to print an error
         # fatal() raises RDLCompileError
